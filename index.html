@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAVI WALKER | Marketing Digital</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#174ea6;
+  background:#fff;
+}
+header{
+  text-align:center;
+  padding:22px 15px;
+  border-bottom:1px solid #e0e7f0;
+}
+header h1{margin:0;font-size:28px;letter-spacing:1px}
+main{max-width:900px;margin:auto;padding:20px 15px 45px}
+h2{text-align:center}
+.intro{text-align:center;line-height:1.7}
+.apresentacao{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:20px 0;
+}
+.foto{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #174ea6;
+  flex-shrink:0;
+}
+.caixa{
+  width:64px;
+  min-width:64px;
+  height:64px;
+  border:2px solid #174ea6;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  cursor:pointer;
+  background:#eef4ff;
+}
+.apresentacao-texto{flex:1}
+.apresentacao-texto h2{text-align:left;margin:0 0 8px}
+.apresentacao-texto p{margin:5px 0;line-height:1.5}
+.servicos{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:25px 0;
+}
+button{
+  font:inherit;
+  font-weight:bold;
+  border:0;
+  border-radius:8px;
+  padding:14px;
+  cursor:pointer;
+}
+.servico,.acao{
+  background:#174ea6;
+  color:white;
+}
+.servico:hover,.acao:hover{background:#103775}
+.detalhe,.contato{
+  display:none;
+  border:1px solid #d6e2f3;
+  border-radius:12px;
+  padding:20px;
+  margin:20px 0;
+  line-height:1.7;
+  background:#fff;
+}
+.detalhe.aberto,.contato.aberto{display:block}
+.exemplo{
+  padding:16px;
+  margin:15px 0;
+  border-left:4px solid #174ea6;
+  border-radius:6px;
+  background:#f3f7fd;
+  color:#183b70;
+}
+.exemplo h3{margin-top:0}
+.etiqueta{
+  font-size:13px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#174ea6;
+}
+.voltar{
+  background:#e8eef8;
+  color:#174ea6;
+  margin-top:12px;
+}
+label{display:block;font-weight:bold;margin-top:14px}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border:1px solid #b9cbe5;
+  border-radius:7px;
+  font:inherit;
+}
+textarea{min-height:100px}
+#resultado{min-height:120px}
+.rodape{text-align:center;border-top:1px solid #e0e7f0;padding:20px}
+@media(max-width:520px){
+  .servicos{grid-template-columns:1fr}
+  .apresentacao{align-items:flex-start;gap:10px}
+  .foto{width:80px;height:80px}
+  .caixa{width:52px;min-width:52px;height:52px;font-size:27px}
+  header h1{font-size:24px}
+  main{padding-left:12px;padding-right:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>DAVI WALKER</h1>
+</header>
+
+<main>
+
+<section class="apresentacao">
+  <button class="caixa" onclick="contato()" aria-label="Entrar em contato" title="Entrar em contato">✉</button>
+
+  <div class="apresentacao-texto">
+    <h2>Marketing Digital</h2>
+    <p><strong>O que fazemos, como podemos ajudar e como contratar.</strong></p>
+    <p>Conheça os serviços e veja exemplos de como podemos divulgar sua empresa.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <h2>Como podemos ajudar sua empresa?</h2>
+  <p>Escolha um serviço. Vamos explicar o que ele significa e mostrar um exemplo prático do trabalho.</p>
+</section>
+
+<div class="servicos">
+  <button class="servico" onclick="abrir('seo')">SEO — Aparecer no Google</button>
+  <button class="servico" onclick="abrir('trafego')">Tráfego Pago — Anúncios</button>
+  <button class="servico" onclick="abrir('conteudo')">Marketing de Conteúdo — Textos</button>
+  <button class="servico" onclick="abrir('redes')">Redes Sociais — Publicações</button>
+  <button class="servico" onclick="abrir('email')">E-mail Marketing — Mensagens</button>
+  <button class="servico" onclick="abrir('kpis')">Métricas — Medir resultados</button>
+</div>
+
+<!-- SEO -->
+<section class="detalhe" id="seo">
+  <h2>SEO — Aparecer no Google</h2>
+  <p><strong>O que significa?</strong></p>
+  <p>SEO é um trabalho para ajudar as pessoas a encontrar sua empresa quando pesquisam no Google.</p>
+  <p><strong>Como podemos ajudar?</strong></p>
+  <p>Preparamos títulos, textos e páginas com informações relevantes sobre sua empresa, seus produtos ou serviços.</p>
+
+  <div class="exemplo">
+    <div class="etiqueta">Exemplo de trabalho pronto</div>
+    <h3>Loja de perfumes: como escolher uma fragrância para cada ocasião</h3>
+    <p>Descubra as características das fragrâncias, conheça opções para diferentes momentos e encontre um perfume que combine com seu estilo.</p>
+    <p><strong>Aplicação:</strong> esse conteúdo pode ser usado em uma página do site da loja.</p>
+  </div>
+
+  <p>SEO não garante a primeira posição nem resultados imediatos. O objetivo é melhorar a presença da empresa nas pesquisas.</p>
+  <button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+<!-- TRÁFEGO PAGO -->
+<section class="detalhe" id="trafego">
+  <h2>Tráfego Pago — Anúncios</h2>
+  <p><strong>O que significa?</strong></p>
+  <p>É pagar para apresentar anúncios da empresa a públicos que podem ter interesse nos produtos ou serviços.</p>
+  <p><strong>Como podemos ajudar?</strong></p>
+  <p>Podemos planejar a mensagem, o público, o objetivo e o conteúdo do anúncio.</p>
+
+  <div class="exemplo">
+    <div class="etiqueta">Exemplo de anúncio</div>
+    <h3>Descubra seu próximo perfume favorito!</h3>
+    <p>Conheça as características da fragrância e encontre uma opção que combine com seu estilo.</p>
+    <p><strong>Botão do anúncio:</strong> Conhecer o produto</p>
+    <p><strong>Aplicação:</strong> anúncio para redes sociais ou pesquisa do Google.</p>
+  </div>
+
+  <p>A publicação de campanhas reais exige acesso à plataforma de anúncios e definição do orçamento com o cliente.</p>
+  <button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+<!-- CONTEÚDO -->
+<section class="detalhe" id="conteudo">
+  <h2>Marketing de Conteúdo — Criar textos</h2>
+  <p><strong>O que significa?</strong></p>
+  <p>É criar conteúdos que informam, despertam interesse e ajudam as pessoas a conhecer uma empresa e seus produtos.</p>
+  <p><strong>Como podemos ajudar?</strong></p>
+  <p>Criamos textos, descrições de produtos, artigos e ideias para campanhas.</p>
+
+  <div class="exemplo">
+    <div class="etiqueta">Exemplo de texto pronto</div>
+    <h3>Uma fragrância para acompanhar seu estilo</h3>
+    <p>Está procurando um perfume para o dia a dia? Conheça as características das fragrâncias, compare as opções disponíveis e escolha aquela que combina com suas preferências.</p>
+    <p><strong>Aplicação:</strong> publicação em rede social, página de produto ou material de divulgação.</p>
+  </div>
+
+  <button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+<!-- REDES SOCIAIS -->
+<section class="detalhe" id="redes">
+  <h2>Redes Sociais — Publicações</h2>
+  <p><strong>O que significa?</strong></p>
+  <p>É usar redes como Instagram, TikTok e Facebook para apresentar produtos, conversar com o público e divulgar a empresa.</p>
+  <p><strong>Como podemos ajudar?</strong></p>
+  <p>Podemos preparar ideias para publicações, legendas, roteiros de vídeos e campanhas.</p>
+
+  <div class="exemplo">
+    <div class="etiqueta">Exemplo de publicação</div>
+    <h3>Conheça o produto da semana</h3>
+    <p>✨ Está procurando algo novo? Apresentamos este produto, suas características e os detalhes que você precisa conhecer antes de escolher.</p>
+    <p>💬 Conte para nós: o que você mais valoriza em um produto?</p>
+    <p><strong>Aplicação:</strong> legenda para acompanhar uma foto ou um vídeo.</p>
+  </div>
+
+  <button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+<!-- EMAIL -->
+<section class="detalhe" id="email">
+  <h2>E-mail Marketing — Mensagens</h2>
+  <p><strong>O que significa?</strong></p>
+  <p>É enviar mensagens de novidades, informações e ofertas a pessoas que aceitaram receber comunicações da empresa.</p>
+  <p><strong>Como podemos ajudar?</strong></p>
+  <p>Podemos criar assuntos, textos e chamadas para campanhas por e-mail.</p>
+
+  <div class="exemplo">
+    <div class="etiqueta">Exemplo de e-mail pronto</div>
+    <p><strong>Assunto:</strong> Conheça nossas novidades!</p>
+    <p>Olá! Temos novidades para você. Conheça nossos produtos, confira as informações e encontre uma opção que combine com suas necessidades.</p>
+    <p><strong>Botão:</strong> Conhecer produtos</p>
+  </div>
+
+  <p>Campanhas reais devem respeitar o consentimento dos destinatários e oferecer uma forma de cancelar o recebimento.</p>
+  <button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+<!-- METRICAS -->
+<section class="detalhe" id="kpis">
+  <h2>Métricas — Medir resultados</h2>
+  <p><strong>O que significa?</strong></p>
+  <p>São indicadores que ajudam a entender como uma divulgação está funcionando.</p>
+  <p><strong>Como podemos ajudar?</strong></p>
+  <p>Podemos organizar os números da campanha e explicar o que eles mostram.</p>
+
+  <div class="exemplo">
+    <div class="etiqueta">Exemplo de relatório demonstrativo</div>
+    <p><strong>Visualizações:</strong> quantas vezes o conteúdo foi exibido.</p>
+    <p><strong>Cliques:</strong> quantas vezes as pessoas acessaram o anúncio ou link.</p>
+    <p><strong>Contatos:</strong> quantas pessoas demonstraram interesse.</p>
+    <p><strong>Conversões:</strong> quantas realizaram a ação desejada.</p>
+    <p><strong>Custo por cliente:</strong> quanto foi gasto para conquistar cada cliente, quando os dados permitem calcular.</p>
+    <p>Os números reais dependem dos dados fornecidos pela plataforma e pela empresa.</p>
+  </div>
+
+  <button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <h2>Vamos conversar sobre sua empresa?</h2>
+  <p>Conte o que sua empresa vende e o que deseja divulgar. Assim podemos entender sua necessidade e preparar uma proposta.</p>
+
+  <form onsubmit="prepararMensagem(event)">
+    <label for="nome">Seu nome</label>
+    <input id="nome" required placeholder="Digite seu nome">
+
+    <label for="empresa">Empresa ou produto</label>
+    <input id="empresa" placeholder="Nome da empresa ou produto">
+
+    <label for="objetivo">O que deseja alcançar?</label>
+    <textarea id="objetivo" required placeholder="Ex.: divulgar produtos, conseguir contatos ou aumentar a visibilidade"></textarea>
+
+    <button class="acao" type="submit">Preparar mensagem</button>
+  </form>
+
+  <label for="resultado">Mensagem preparada</label>
+  <textarea id="resultado" hidden readonly></textarea>
+  <button class="acao" onclick="copiarMensagem()">Copiar mensagem</button>
+  <br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <strong>DAVI WALKER — Marketing Digital</strong>
+  <p>Estratégias e conteúdos para apresentar sua empresa ao público.</p>
+</footer>
+
+<script>
+function fecharDetalhes(){
+  document.querySelectorAll('.detalhe').forEach(function(secao){
+    secao.classList.remove('aberto');
+  });
+}
+
+function abrir(id){
+  const secao = document.getElementById(id);
+  if(!secao) return;
+
+  const jaEstaAberta = secao.classList.contains('aberto');
+
+  fecharDetalhes();
+  document.getElementById('contato').classList.remove('aberto');
+
+  if(!jaEstaAberta){
+    secao.classList.add('aberto');
+    secao.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function contato(){
+  fecharDetalhes();
+
+  const secao = document.getElementById('contato');
+  const jaEstaAberta = secao.classList.contains('aberto');
+
+  secao.classList.remove('aberto');
+
+  if(!jaEstaAberta){
+    secao.classList.add('aberto');
+    secao.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function voltarServicos(){
+  fecharDetalhes();
+  document.getElementById('contato').classList.remove('aberto');
+  document.querySelector('.intro').scrollIntoView({
+    behavior:'smooth',
+    block:'start'
+  });
+}
+
+function prepararMensagem(event){
+  event.preventDefault();
+
+  const nome = document.getElementById('nome').value.trim();
+  const empresa = document.getElementById('empresa').value.trim();
+  const objetivo = document.getElementById('objetivo').value.trim();
+
+  const resultado = document.getElementById('resultado');
+
+  resultado.value =
+    'Olá, Davi Walker! Meu nome é ' + nome +
+    '. Empresa ou produto: ' + (empresa || 'Não informado') +
+    '. O que desejo alcançar: ' + objetivo;
+
+  resultado.hidden = false;
+}
+
+function copiarMensagem(){
+  const resultado = document.getElementById('resultado');
+
+  if(resultado.hidden || !resultado.value){
+    alert('Preencha o formulário e toque em Preparar mensagem primeiro.');
+    return;
+  }
+
+  resultado.focus();
+  resultado.select();
+  resultado.setSelectionRange(0, resultado.value.length);
+
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(resultado.value)
+      .then(function(){alert('Mensagem copiada!');})
+      .catch(function(){alert('Selecione a mensagem e copie manualmente.');});
+  }else{
+    try{
+      const copiou = document.execCommand('copy');
+      alert(copiou ? 'Mensagem copiada!' : 'Selecione e copie manualmente.');
+    }catch(e){
+      alert('Selecione a mensagem e copie manualmente.');
+    }
+  }
+}
+</script>
+
+</body>
+</html>

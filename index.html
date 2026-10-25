@@ -9,209 +9,491 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;color:#174ea6;background:#fff}
-header{text-align:center;padding:22px 15px;border-bottom:1px solid #e0e7f0}
-header h1{margin:0;font-size:28px;letter-spacing:1px}
-main{max-width:950px;margin:auto;padding:20px 15px 45px}
-h2{text-align:center}
-.intro{text-align:center;line-height:1.7}
-.topo{display:flex;align-items:center;gap:15px;margin:18px 0 25px}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fff;
+  color:#174ea6;
+}
+header{
+  padding:24px 16px;
+  text-align:center;
+  border-bottom:1px solid #dce6f5;
+}
+header h1{margin:0;font-size:30px;letter-spacing:1px}
+header p{margin:8px 0 0;color:#526b91}
+main{max-width:900px;margin:auto;padding:20px 15px 45px}
+.intro{
+  position:relative;
+  padding:24px 18px;
+  border:1px solid #dce6f5;
+  border-radius:14px;
+  margin-bottom:22px;
+}
+.intro h2{margin:0 0 12px;font-size:25px}
+.intro p{color:#344d70;line-height:1.7}
 .mail{
-  width:65px;height:65px;min-width:65px;border:2px solid #174ea6;
-  border-radius:12px;background:#eef4ff;color:#174ea6;
-  font-size:32px;display:flex;align-items:center;justify-content:center;
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:12px;
+  background:#174ea6;
+  color:#fff;
+  font-size:25px;
+  cursor:pointer;
 }
-.topo-texto{flex:1}
-.topo-texto h2{text-align:left;margin:0 0 8px}
-.topo-texto p{margin:5px 0;line-height:1.5}
-.servicos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:25px 0}
-button{font:inherit;font-weight:bold;border:0;border-radius:8px;padding:13px;cursor:pointer}
-.servico,.acao{background:#174ea6;color:white}
-.servico:hover,.acao:hover{background:#103775}
-.detalhe,.contato{
-  display:none;border:1px solid #d6e2f3;border-radius:12px;
-  padding:18px;margin:20px 0;line-height:1.7;background:#fff
+.intro h2{padding-right:48px}
+h2,h3{color:#174ea6}
+.subtitulo{margin:25px 0 12px}
+.servicos{display:grid;gap:12px}
+.servico{
+  width:100%;
+  padding:17px;
+  text-align:left;
+  border:1px solid #cbdaf0;
+  border-radius:12px;
+  background:#fff;
+  color:#174ea6;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
 }
-.detalhe.aberto,.contato.aberto{display:block}
+.servico:hover,.servico:focus{background:#f1f6ff}
+.servico span{float:right;font-size:20px}
+.detalhe{
+  display:none;
+  margin-top:12px;
+  padding:18px;
+  border:1px solid #dce6f5;
+  border-radius:12px;
+  color:#344d70;
+  line-height:1.7;
+  scroll-margin-top:12px;
+}
+.detalhe.aberto{display:block}
+.detalhe h3{margin-top:0}
 .foto-produto{
-  display:block;width:100%;max-width:390px;max-height:380px;
-  object-fit:cover;border-radius:10px;margin:12px auto;
-  background:#f3f7fd
+  display:block;
+  width:100%;
+  max-height:390px;
+  object-fit:cover;
+  border-radius:10px;
+  margin:15px 0;
+  background:#f1f4f8;
 }
-.exemplo{padding:15px;margin:15px 0;border-left:4px solid #174ea6;border-radius:6px;background:#f3f7fd;color:#183b70}
-.exemplo h3{margin-top:0}
-.etiqueta{font-size:12px;font-weight:bold;text-transform:uppercase;color:#174ea6}
-.voltar{background:#e8eef8;color:#174ea6;margin-top:12px}
-label{display:block;font-weight:bold;margin-top:14px}
-input,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #b9cbe5;border-radius:7px;font:inherit}
-textarea{min-height:100px}
-.rodape{text-align:center;border-top:1px solid #e0e7f0;padding:20px}
-@media(max-width:520px){
- .servicos{grid-template-columns:1fr}
- .topo{align-items:flex-start;gap:10px}
- .mail{width:52px;height:52px;min-width:52px;font-size:26px}
- header h1{font-size:24px}
- main{padding-left:12px;padding-right:12px}
+.exemplo{
+  background:#f3f7ff;
+  border-left:4px solid #174ea6;
+  border-radius:5px;
+  padding:13px;
+  margin:15px 0;
+  color:#24436e;
+}
+.botao{
+  display:inline-block;
+  border:0;
+  border-radius:8px;
+  padding:13px 16px;
+  margin:8px 5px 0 0;
+  background:#174ea6;
+  color:#fff;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  text-decoration:none;
+}
+.botao.secundario{background:#e8effb;color:#174ea6}
+.campo{margin:14px 0}
+label{display:block;font-weight:bold;margin-bottom:6px}
+input,textarea,select{
+  width:100%;
+  padding:12px;
+  border:1px solid #bdcde4;
+  border-radius:8px;
+  font:16px Arial,sans-serif;
+  color:#243b5a;
+  background:#fff;
+}
+textarea{min-height:100px;resize:vertical}
+#mensagemPronta{
+  min-height:170px;
+  background:#f8faff;
+}
+.aviso{font-size:13px;color:#526b91}
+footer{
+  text-align:center;
+  padding:24px 12px;
+  border-top:1px solid #dce6f5;
+  color:#526b91;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
-<header><h1>DAVI WALKER</h1></header>
+<header>
+  <h1>DAVI WALKER</h1>
+  <p>Marketing Digital</p>
+</header>
 
 <main>
-<section class="topo">
-  <button class="mail" onclick="contato()" aria-label="Abrir contato" title="Contato">✉</button>
-  <div class="topo-texto">
-    <h2>Marketing Digital</h2>
-    <p><strong>O que fazemos, como podemos ajudar e como contratar.</strong></p>
-    <p>Escolha um serviço e veja uma demonstração de como podemos divulgar sua empresa.</p>
+  <section class="intro">
+    <button class="mail" onclick="contato()" aria-label="Abrir contato">✉</button>
+    <h2>Vamos divulgar sua empresa?</h2>
+    <p>
+      Ajudo empresas e profissionais a apresentar seus produtos,
+      divulgar seus serviços e conquistar novas oportunidades pela internet.
+    </p>
+    <p>
+      Escolha uma das opções abaixo para conhecer as possibilidades
+      e ver um exemplo de divulgação.
+    </p>
+  </section>
+
+  <h2 class="subtitulo">Serviços de Marketing Digital</h2>
+
+  <div class="servicos">
+
+    <button class="servico" onclick="abrir('s1')">
+      1. SEO — Aparecer no Google <span>＋</span>
+    </button>
+    <section class="detalhe" id="s1">
+      <h3>SEO — Ajude clientes a encontrar sua empresa</h3>
+      <p>
+        Organizamos textos, títulos e informações do seu site para
+        facilitar que mecanismos de busca entendam o seu negócio.
+      </p>
+      <p><b>Como podemos ajudar?</b> Criando conteúdos úteis,
+      descrições de produtos e páginas organizadas para pesquisas.
+      A posição no Google não é garantida.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80"
+        alt="Perfumes apresentados para divulgação">
+      <div class="exemplo">
+        <b>Exemplo de conteúdo:</b><br>
+        “Como escolher um perfume para cada ocasião” — um artigo
+        que informa o cliente e apresenta produtos da loja.
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s2')">
+      2. Tráfego Pago — Anúncios <span>＋</span>
+    </button>
+    <section class="detalhe" id="s2">
+      <h3>Tráfego Pago — Divulgue com anúncios</h3>
+      <p>
+        Planejamos anúncios para apresentar sua empresa a públicos
+        que possam ter interesse no produto ou serviço.
+      </p>
+      <p><b>Como podemos ajudar?</b> Pensando na mensagem, no público,
+      no objetivo e no orçamento da campanha.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=80"
+        alt="Frasco de perfume para exemplo de anúncio">
+      <div class="exemplo">
+        <b>Exemplo de anúncio:</b><br>
+        “Descubra seu próximo perfume favorito! Conheça nossa seleção
+        e encontre uma fragrância para o seu estilo.”
+      </div>
+      <p class="aviso">A veiculação exige uma conta na plataforma, aprovação
+      do cliente e orçamento para os anúncios.</p>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s3')">
+      3. Marketing de Conteúdo — Textos <span>＋</span>
+    </button>
+    <section class="detalhe" id="s3">
+      <h3>Marketing de Conteúdo — Textos que apresentam seu negócio</h3>
+      <p>
+        Criamos ideias de textos para explicar o valor de um produto,
+        responder dúvidas e ajudar o cliente a conhecer sua empresa.
+      </p>
+      <p><b>Como podemos ajudar?</b> Com descrições, artigos,
+      chamadas promocionais e textos para páginas de venda.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=80"
+        alt="Produto em destaque para conteúdo">
+      <div class="exemplo">
+        <b>Exemplo de texto:</b><br>
+        “Uma fragrância que combina com o seu estilo. Conheça os detalhes,
+        escolha sua favorita e descubra uma nova experiência.”
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s4')">
+      4. Redes Sociais — Publicações <span>＋</span>
+    </button>
+    <section class="detalhe" id="s4">
+      <h3>Redes Sociais — Apresente sua empresa</h3>
+      <p>
+        Preparamos ideias para publicações, legendas, temas e campanhas
+        para Instagram, Facebook e outras redes.
+      </p>
+      <p><b>Como podemos ajudar?</b> Planejando o que publicar,
+      como apresentar os produtos e como convidar o público a entrar em contato.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=80"
+        alt="Produto para exemplo de publicação">
+      <div class="exemplo">
+        <b>Exemplo de publicação:</b><br>
+        “Produto da semana: conheça os detalhes, veja as opções disponíveis
+        e fale conosco para saber mais.”
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s5')">
+      5. E-mail Marketing — Mensagens <span>＋</span>
+    </button>
+    <section class="detalhe" id="s5">
+      <h3>E-mail Marketing — Mantenha contato com seus clientes</h3>
+      <p>
+        Planejamos mensagens de novidades, ofertas e informações
+        para pessoas que aceitaram receber comunicações da empresa.
+      </p>
+      <p><b>Como podemos ajudar?</b> Criando assuntos, textos e chamadas
+      para apresentar produtos e novidades.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=80"
+        alt="Produtos de beleza para exemplo de e-mail">
+      <div class="exemplo">
+        <b>Exemplo de assunto:</b><br>
+        “Novidades da semana: veja o que chegou à nossa loja!”
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s6')">
+      6. Métricas — Resultados <span>＋</span>
+    </button>
+    <section class="detalhe" id="s6">
+      <h3>Métricas — Entenda os resultados</h3>
+      <p>
+        Acompanhamos indicadores disponíveis nas plataformas para entender
+        como o público reage às ações de divulgação.
+      </p>
+      <p><b>Como podemos ajudar?</b> Organizando dados de visualizações,
+      cliques, contatos e vendas registradas.</p>
+      <div class="exemplo">
+        <b>Exemplo de relatório:</b><br>
+        Publicações realizadas: 8<br>
+        Visualizações: consultar os dados reais<br>
+        Cliques e contatos: consultar os dados reais<br>
+        <small>Os resultados devem ser preenchidos com dados verdadeiros da campanha.</small>
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s7')">
+      7. Fotografia e Divulgação de Produtos <span>＋</span>
+    </button>
+    <section class="detalhe" id="s7">
+      <h3>Fotografia e Divulgação de Produtos</h3>
+      <p>
+        A apresentação visual ajuda o cliente a perceber detalhes,
+        características e utilidades do produto.
+      </p>
+      <p><b>Como podemos ajudar?</b> Planejando fotos, escolhendo imagens
+      adequadas e montando peças promocionais com textos e chamadas.
+      Também podemos orientar sobre como fotografar usando o celular.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=80"
+        alt="Perfume em destaque para divulgação">
+      <div class="exemplo">
+        <b>Exemplo de divulgação:</b><br>
+        Foto do produto, nome, principal característica e uma chamada:
+        “Conheça o produto e peça mais informações.”
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s8')">
+      8. Vídeos Publicitários <span>＋</span>
+    </button>
+    <section class="detalhe" id="s8">
+      <h3>Vídeos Publicitários</h3>
+      <p>
+        Vídeos curtos podem apresentar um produto, mostrar como um serviço
+        funciona ou convidar o público a conhecer uma empresa.
+      </p>
+      <p><b>Como podemos ajudar?</b> Criando roteiros, cenas sugeridas,
+      textos na tela e ideias para vídeos de Reels, Shorts e anúncios.
+      A gravação e a edição podem ser combinadas conforme o projeto.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=80"
+        alt="Câmera para produção de vídeo">
+      <div class="exemplo">
+        <b>Exemplo de roteiro de 15 segundos:</b><br>
+        1. Mostrar o produto.<br>
+        2. Destacar um benefício real.<br>
+        3. Encerrar com o nome da empresa e convite para entrar em contato.
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s9')">
+      9. Catálogo e Loja Virtual <span>＋</span>
+    </button>
+    <section class="detalhe" id="s9">
+      <h3>Catálogo e Loja Virtual</h3>
+      <p>
+        Organizamos a apresentação dos produtos para que os clientes
+        possam ver fotos, nomes, descrições e informações importantes.
+      </p>
+      <p><b>Como podemos ajudar?</b> Planejando um catálogo digital,
+      organizando páginas de produtos e orientando a estrutura de uma loja virtual.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1000&q=80"
+        alt="Vitrine de loja">
+      <div class="exemplo">
+        <b>Exemplo de catálogo:</b><br>
+        Foto do produto • Nome • Descrição • Preço informado pela empresa
+        • Botão para solicitar informações ou comprar.
+      </div>
+      <p class="aviso">Pagamentos, estoque e pedidos automáticos exigem
+      uma plataforma e configuração específicas.</p>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s10')">
+      10. Marketing Local — Clientes da Região <span>＋</span>
+    </button>
+    <section class="detalhe" id="s10">
+      <h3>Marketing Local</h3>
+      <p>
+        Ajudamos a organizar a presença digital de empresas que atendem
+        clientes em uma cidade ou região específica.
+      </p>
+      <p><b>Como podemos ajudar?</b> Preparando informações da empresa,
+      textos de apresentação, publicações locais e orientações para o
+      Perfil da Empresa no Google.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
+        alt="Loja física para exemplo de marketing local">
+      <div class="exemplo">
+        <b>Exemplo de divulgação:</b><br>
+        “Atendemos em [nome da cidade]. Conheça nossos serviços,
+        consulte os horários e fale conosco.”
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s11')">
+      11. Planejamento de Campanhas <span>＋</span>
+    </button>
+    <section class="detalhe" id="s11">
+      <h3>Planejamento de Campanhas</h3>
+      <p>
+        Em vez de publicar sem organização, montamos um plano de divulgação
+        com objetivo, público, mensagem e calendário.
+      </p>
+      <p><b>Como podemos ajudar?</b> Definindo etapas para apresentar
+      lançamentos, promoções, datas especiais e serviços da empresa.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
+        alt="Planejamento de uma campanha em equipe">
+      <div class="exemplo">
+        <b>Exemplo de campanha de uma semana:</b><br>
+        Segunda: apresentar o produto.<br>
+        Quarta: explicar os benefícios.<br>
+        Sexta: publicar uma oferta aprovada pela empresa.<br>
+        Sábado: acompanhar perguntas e contatos.
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
+    <button class="servico" onclick="abrir('s12')">
+      12. Identidade Visual e Marca <span>＋</span>
+    </button>
+    <section class="detalhe" id="s12">
+      <h3>Identidade Visual e Marca</h3>
+      <p>
+        Uma apresentação visual consistente ajuda as pessoas a reconhecer
+        uma empresa em suas publicações e materiais.
+      </p>
+      <p><b>Como podemos ajudar?</b> Planejando combinações de cores,
+      estilo de imagens, modelos de publicação e formas de apresentar
+      o nome e a mensagem da marca.</p>
+      <img class="foto-produto"
+        src="https://images.unsplash.com/photo-1634942536790-253a9c7c6b2a?auto=format&fit=crop&w=1000&q=80"
+        alt="Materiais de design para identidade visual">
+      <div class="exemplo">
+        <b>Exemplo de identidade visual:</b><br>
+        Nome da empresa, paleta de cores, estilo de letras e um modelo
+        de publicação que mantenha a mesma aparência da marca.
+      </div>
+      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+    </section>
+
   </div>
-</section>
 
-<section class="intro">
-  <h2>Como podemos ajudar sua empresa?</h2>
-  <p>Você não precisa conhecer os termos técnicos. Veja a explicação e um exemplo de trabalho.</p>
-</section>
+  <section class="detalhe" id="contato" style="margin-top:25px">
+    <h2>Vamos conversar sobre seu negócio?</h2>
+    <p>Preencha as informações para preparar uma mensagem para Davi Walker.</p>
 
-<div class="servicos">
-  <button class="servico" onclick="abrir('seo')">SEO — Aparecer no Google</button>
-  <button class="servico" onclick="abrir('trafego')">Tráfego Pago — Anúncios</button>
-  <button class="servico" onclick="abrir('conteudo')">Marketing de Conteúdo — Textos</button>
-  <button class="servico" onclick="abrir('redes')">Redes Sociais — Publicações</button>
-  <button class="servico" onclick="abrir('email')">E-mail Marketing — Mensagens</button>
-  <button class="servico" onclick="abrir('kpis')">Métricas — Resultados</button>
-</div>
+    <form id="formContato">
+      <div class="campo">
+        <label for="nome">Seu nome</label>
+        <input id="nome" required placeholder="Digite seu nome">
+      </div>
 
-<!-- SEO -->
-<section class="detalhe" id="seo">
-<h2>SEO — Aparecer no Google</h2>
-<p><strong>O que significa?</strong> Ajudar as pessoas a encontrar sua empresa quando pesquisam produtos ou serviços no Google.</p>
-<p><strong>Como podemos ajudar?</strong> Criamos títulos, descrições e conteúdos relevantes para as páginas da sua empresa.</p>
-<img class="foto-produto" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85" alt="Perfume em fotografia de produto" loading="lazy">
-<div class="exemplo">
-<div class="etiqueta">Exemplo de trabalho pronto</div>
-<h3>Como escolher um perfume para cada ocasião</h3>
-<p>Conheça as características das fragrâncias e descubra opções para diferentes momentos do dia.</p>
-<p><strong>Aplicação:</strong> texto e imagem para uma página de produto.</p>
-</div>
-<p>SEO pode melhorar a presença nas pesquisas, mas não garante a primeira posição nem resultados imediatos.</p>
-<button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
+      <div class="campo">
+        <label for="empresa">Nome da empresa ou produto</label>
+        <input id="empresa" required placeholder="O que você quer divulgar?">
+      </div>
 
-<!-- TRÁFEGO PAGO -->
-<section class="detalhe" id="trafego">
-<h2>Tráfego Pago — Anúncios</h2>
-<p><strong>O que significa?</strong> Investir em anúncios para apresentar sua empresa a pessoas que podem ter interesse nos seus produtos.</p>
-<p><strong>Como podemos ajudar?</strong> Planejamos a mensagem, a apresentação do produto e a ideia da campanha.</p>
-<img class="foto-produto" src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=85" alt="Perfume para exemplo de anúncio" loading="lazy">
-<div class="exemplo">
-<div class="etiqueta">Exemplo de anúncio</div>
-<h3>Descubra seu próximo perfume favorito!</h3>
-<p>Conheça a fragrância, veja suas características e encontre uma opção para seu estilo.</p>
-<p><strong>Chamada:</strong> Conhecer o produto.</p>
-</div>
-<p>A publicação de anúncios reais exige acesso à plataforma e definição de orçamento com o cliente.</p>
-<button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
+      <div class="campo">
+        <label for="servicoEscolhido">Serviço de interesse</label>
+        <select id="servicoEscolhido">
+          <option value="Quero conhecer as opções">Ainda quero conhecer as opções</option>
+          <option>SEO — Aparecer no Google</option>
+          <option>Tráfego Pago — Anúncios</option>
+          <option>Marketing de Conteúdo — Textos</option>
+          <option>Redes Sociais — Publicações</option>
+          <option>E-mail Marketing — Mensagens</option>
+          <option>Métricas — Resultados</option>
+          <option>Fotografia e Divulgação de Produtos</option>
+          <option>Vídeos Publicitários</option>
+          <option>Catálogo e Loja Virtual</option>
+          <option>Marketing Local</option>
+          <option>Planejamento de Campanhas</option>
+          <option>Identidade Visual e Marca</option>
+        </select>
+      </div>
 
-<!-- CONTEÚDO -->
-<section class="detalhe" id="conteudo">
-<h2>Marketing de Conteúdo — Criar textos</h2>
-<p><strong>O que significa?</strong> Criar materiais que informam, despertam interesse e ajudam o público a conhecer uma empresa.</p>
-<p><strong>Como podemos ajudar?</strong> Produzimos textos, descrições de produtos, artigos e ideias para campanhas.</p>
-<img class="foto-produto" src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85" alt="Frasco de perfume em fotografia de divulgação" loading="lazy">
-<div class="exemplo">
-<div class="etiqueta">Exemplo de texto pronto</div>
-<h3>Uma fragrância para acompanhar seu estilo</h3>
-<p>Está procurando um perfume para o dia a dia? Conheça as características das fragrâncias, compare as opções disponíveis e escolha aquela que combina com suas preferências.</p>
-<p><strong>Aplicação:</strong> publicação, página de produto ou material de divulgação.</p>
-</div>
-<button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
+      <div class="campo">
+        <label for="objetivo">O que você precisa?</label>
+        <textarea id="objetivo" placeholder="Conte um pouco sobre sua empresa e seu objetivo."></textarea>
+      </div>
 
-<!-- REDES SOCIAIS -->
-<section class="detalhe" id="redes">
-<h2>Redes Sociais — Publicações</h2>
-<p><strong>O que significa?</strong> Usar redes como Instagram, TikTok e Facebook para apresentar produtos e conversar com o público.</p>
-<p><strong>Como podemos ajudar?</strong> Criamos ideias para posts, legendas, roteiros de vídeos e campanhas.</p>
-<img class="foto-produto" src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=800&q=85" alt="Perfume apresentado em fotografia para redes sociais" loading="lazy">
-<div class="exemplo">
-<div class="etiqueta">Exemplo de publicação</div>
-<h3>Conheça o produto da semana</h3>
-<p>✨ Apresentamos este produto, suas características e detalhes para ajudar você a conhecer melhor suas opções.</p>
-<p>💬 O que você mais valoriza ao escolher um perfume?</p>
-<p><strong>Aplicação:</strong> legenda para acompanhar uma foto ou vídeo.</p>
-</div>
-<button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
+      <button type="submit" class="botao">Preparar mensagem</button>
+    </form>
 
-<!-- EMAIL -->
-<section class="detalhe" id="email">
-<h2>E-mail Marketing — Mensagens</h2>
-<p><strong>O que significa?</strong> Enviar novidades e ofertas por e-mail a pessoas que aceitaram receber mensagens da empresa.</p>
-<p><strong>Como podemos ajudar?</strong> Preparamos assuntos, textos e chamadas para campanhas.</p>
-<img class="foto-produto" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85" alt="Perfume para exemplo de e-mail de divulgação" loading="lazy">
-<div class="exemplo">
-<div class="etiqueta">Exemplo de e-mail pronto</div>
-<p><strong>Assunto:</strong> Conheça nossas novidades!</p>
-<p>Olá! Temos novidades para você. Conheça nossos produtos, confira os detalhes e encontre uma opção para suas preferências.</p>
-<p><strong>Botão:</strong> Conhecer produtos.</p>
-</div>
-<p>Campanhas reais devem respeitar o consentimento dos destinatários e oferecer uma forma de cancelar o recebimento.</p>
-<button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
+    <div class="campo">
+      <label for="mensagemPronta">Sua mensagem</label>
+      <textarea id="mensagemPronta" readonly placeholder="Sua mensagem aparecerá aqui."></textarea>
+    </div>
 
-<!-- METRICAS -->
-<section class="detalhe" id="kpis">
-<h2>Métricas — Medir resultados</h2>
-<p><strong>O que significa?</strong> São indicadores que ajudam a entender como uma divulgação está funcionando.</p>
-<p><strong>Como podemos ajudar?</strong> Organizamos os números disponíveis e explicamos o que eles mostram.</p>
-<img class="foto-produto" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=85" alt="Painel de dados e gráficos de marketing" loading="lazy">
-<div class="exemplo">
-<div class="etiqueta">Exemplo de relatório</div>
-<p><strong>Visualizações:</strong> quantas vezes o conteúdo foi exibido.</p>
-<p><strong>Cliques:</strong> quantas vezes as pessoas acessaram o anúncio ou link.</p>
-<p><strong>Contatos:</strong> quantas pessoas demonstraram interesse.</p>
-<p><strong>Conversões:</strong> quantas realizaram a ação desejada.</p>
-<p>Os números reais dependem dos dados fornecidos pelas plataformas.</p>
-</div>
-<button class="acao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
+    <button class="botao" type="button" onclick="copiarMensagem()">Copiar mensagem</button>
+    <button class="botao secundario" type="button" onclick="voltarServicos()">Voltar aos serviços</button>
 
-<!-- CONTATO -->
-<section class="contato" id="contato">
-<h2>Vamos conversar sobre sua empresa?</h2>
-<p>Conte o que sua empresa vende e o que deseja alcançar. Assim poderemos entender sua necessidade e preparar uma proposta.</p>
-<form onsubmit="prepararMensagem(event)">
-<label for="nome">Seu nome</label>
-<input id="nome" required placeholder="Digite seu nome">
-
-<label for="empresa">Empresa ou produto</label>
-<input id="empresa" placeholder="Nome da empresa ou produto">
-
-<label for="objetivo">O que deseja divulgar?</label>
-<textarea id="objetivo" required placeholder="Conte o que você precisa"></textarea>
-
-<button class="acao" type="submit">Preparar mensagem</button>
-</form>
-<label for="resultado">Mensagem preparada</label>
-<textarea id="resultado" hidden readonly></textarea>
-<button class="acao" onclick="copiarMensagem()">Copiar mensagem</button>
-<br><button class="voltar" onclick="voltarServicos()">Voltar aos serviços</button>
-</section>
-
+    <p id="status" class="aviso" aria-live="polite"></p>
+    <p class="aviso">
+      A mensagem é preparada neste site. Para enviá-la diretamente por WhatsApp
+      ou e-mail, será necessário configurar o contato de destino.
+    </p>
+  </section>
 </main>
 
-<footer class="rodape">
-<strong>DAVI WALKER — Marketing Digital</strong>
-<p>Conteúdo e estratégias para apresentar sua empresa ao público.</p>
+<footer>
+  <b>DAVI WALKER — Marketing Digital</b>
+  <p>Ideias, conteúdo e divulgação para sua empresa.</p>
 </footer>
 
 <script>
@@ -222,13 +504,11 @@ function fecharDetalhes(){
 }
 
 function abrir(id){
-  const secao=document.getElementById(id);
-  if(!secao)return;
+  const secao = document.getElementById(id);
+  if(!secao) return;
 
-  const jaEstaAberta=secao.classList.contains('aberto');
-
+  const jaEstaAberta = secao.classList.contains('aberto');
   fecharDetalhes();
-  document.getElementById('contato').classList.remove('aberto');
 
   if(!jaEstaAberta){
     secao.classList.add('aberto');
@@ -237,10 +517,10 @@ function abrir(id){
 }
 
 function contato(){
+  const secao = document.getElementById('contato');
+  const jaEstaAberta = secao.classList.contains('aberto');
+
   fecharDetalhes();
-  const secao=document.getElementById('contato');
-  const jaEstaAberta=secao.classList.contains('aberto');
-  secao.classList.remove('aberto');
 
   if(!jaEstaAberta){
     secao.classList.add('aberto');
@@ -250,46 +530,56 @@ function contato(){
 
 function voltarServicos(){
   fecharDetalhes();
-  document.getElementById('contato').classList.remove('aberto');
-  document.querySelector('.intro').scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelector('.intro').scrollIntoView({
+    behavior:'smooth',
+    block:'start'
+  });
 }
 
-function prepararMensagem(event){
+document.getElementById('formContato').addEventListener('submit',function(event){
   event.preventDefault();
-  const nome=document.getElementById('nome').value.trim();
-  const empresa=document.getElementById('empresa').value.trim();
-  const objetivo=document.getElementById('objetivo').value.trim();
 
-  const resultado=document.getElementById('resultado');
-  resultado.value='Olá, Davi Walker! Meu nome é '+nome+
-    '. Empresa ou produto: '+(empresa||'Não informado')+
-    '. O que desejo divulgar: '+objetivo;
-  resultado.hidden=false;
-}
+  const nome = document.getElementById('nome').value.trim();
+  const empresa = document.getElementById('empresa').value.trim();
+  const servico = document.getElementById('servicoEscolhido').value;
+  const objetivo = document.getElementById('objetivo').value.trim();
 
-function copiarMensagem(){
-  const resultado=document.getElementById('resultado');
+  const mensagem =
+    'Olá, Davi Walker! Tenho interesse em marketing digital.\n\n' +
+    'Meu nome: ' + nome + '\n' +
+    'Empresa ou produto: ' + empresa + '\n' +
+    'Serviço de interesse: ' + servico + '\n' +
+    'O que preciso: ' + (objetivo || 'Gostaria de conversar sobre as opções.') +
+    '\n\nGostaria de saber como podemos trabalhar juntos.';
 
-  if(resultado.hidden||!resultado.value){
-    alert('Preencha o formulário e toque em Preparar mensagem primeiro.');
+  document.getElementById('mensagemPronta').value = mensagem;
+  document.getElementById('status').textContent =
+    'Mensagem preparada. Você pode copiá-la para enviar.';
+  document.getElementById('mensagemPronta').scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+  });
+});
+
+async function copiarMensagem(){
+  const campo = document.getElementById('mensagemPronta');
+  const status = document.getElementById('status');
+
+  if(!campo.value.trim()){
+    status.textContent = 'Primeiro, preencha o formulário e toque em Preparar mensagem.';
     return;
   }
 
-  resultado.focus();
-  resultado.select();
-  resultado.setSelectionRange(0,resultado.value.length);
-
-  if(navigator.clipboard&&window.isSecureContext){
-    navigator.clipboard.writeText(resultado.value)
-      .then(function(){alert('Mensagem copiada!');})
-      .catch(function(){alert('Selecione e copie a mensagem manualmente.');});
-  }else{
-    try{
-      const copiou=document.execCommand('copy');
-      alert(copiou?'Mensagem copiada!':'Selecione e copie a mensagem manualmente.');
-    }catch(e){
-      alert('Selecione e copie a mensagem manualmente.');
-    }
+  try{
+    await navigator.clipboard.writeText(campo.value);
+    status.textContent = 'Mensagem copiada!';
+  }catch(erro){
+    campo.focus();
+    campo.select();
+    const copiou = document.execCommand('copy');
+    status.textContent = copiou
+      ? 'Mensagem copiada!'
+      : 'Selecione o texto e use a opção Copiar do celular.';
   }
 }
 </script>

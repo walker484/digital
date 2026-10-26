@@ -106,6 +106,7 @@ h2,h3{color:#174ea6}
   text-decoration:none;
 }
 .botao.secundario{background:#e8effb;color:#174ea6}
+.botao-whatsapp{background:#168b50;color:#fff}
 .campo{margin:14px 0}
 label{display:block;font-weight:bold;margin-bottom:6px}
 input,textarea,select{
@@ -129,6 +130,40 @@ footer{
   border-top:1px solid #dce6f5;
   color:#526b91;
   font-size:14px;
+}
+
+/* BOTÃO FLUTUANTE DO WHATSAPP */
+.whatsapp-flutuante{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 18px;
+  border:0;
+  border-radius:50px;
+  background:#25D366;
+  color:#073b20;
+  font-size:16px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 4px 14px rgba(0,0,0,.22);
+}
+.whatsapp-flutuante:hover{background:#1ebe5d}
+.whatsapp-flutuante:focus-visible{
+  outline:3px solid #174ea6;
+  outline-offset:3px;
+}
+@media(max-width:480px){
+  .whatsapp-flutuante{
+    right:12px;
+    bottom:12px;
+    padding:12px 15px;
+    font-size:14px;
+  }
 }
 </style>
 </head>
@@ -162,22 +197,11 @@ footer{
     </button>
     <section class="detalhe" id="s1">
       <h3>SEO — Ajude clientes a encontrar sua empresa</h3>
-      <p>
-        Organizamos textos, títulos e informações do seu site para
-        facilitar que mecanismos de busca entendam o seu negócio.
-      </p>
-      <p><b>Como podemos ajudar?</b> Criando conteúdos úteis,
-      descrições de produtos e páginas organizadas para pesquisas.
-      A posição no Google não é garantida.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80"
-        alt="Perfumes apresentados para divulgação">
-      <div class="exemplo">
-        <b>Exemplo de conteúdo:</b><br>
-        “Como escolher um perfume para cada ocasião” — um artigo
-        que informa o cliente e apresenta produtos da loja.
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Organizamos textos, títulos e informações do seu site para facilitar que mecanismos de busca entendam o seu negócio.</p>
+      <p><b>Como podemos ajudar?</b> Criando conteúdos úteis, descrições de produtos e páginas organizadas para pesquisas. A posição no Google não é garantida.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80" alt="Perfumes apresentados para divulgação">
+      <div class="exemplo"><b>Exemplo de conteúdo:</b><br>“Como escolher um perfume para cada ocasião” — um artigo que informa o cliente e apresenta produtos da loja.</div>
+      <button class="botao" onclick="contatoServico('SEO — Aparecer no Google')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s2')">
@@ -185,23 +209,12 @@ footer{
     </button>
     <section class="detalhe" id="s2">
       <h3>Tráfego Pago — Divulgue com anúncios</h3>
-      <p>
-        Planejamos anúncios para apresentar sua empresa a públicos
-        que possam ter interesse no produto ou serviço.
-      </p>
-      <p><b>Como podemos ajudar?</b> Pensando na mensagem, no público,
-      no objetivo e no orçamento da campanha.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=80"
-        alt="Frasco de perfume para exemplo de anúncio">
-      <div class="exemplo">
-        <b>Exemplo de anúncio:</b><br>
-        “Descubra seu próximo perfume favorito! Conheça nossa seleção
-        e encontre uma fragrância para o seu estilo.”
-      </div>
-      <p class="aviso">A veiculação exige uma conta na plataforma, aprovação
-      do cliente e orçamento para os anúncios.</p>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Planejamos anúncios para apresentar sua empresa a públicos que possam ter interesse no produto ou serviço.</p>
+      <p><b>Como podemos ajudar?</b> Pensando na mensagem, no público, no objetivo e no orçamento da campanha.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=80" alt="Frasco de perfume para exemplo de anúncio">
+      <div class="exemplo"><b>Exemplo de anúncio:</b><br>“Descubra seu próximo perfume favorito! Conheça nossa seleção e encontre uma fragrância para o seu estilo.”</div>
+      <p class="aviso">A veiculação exige uma conta na plataforma, aprovação do cliente e orçamento para os anúncios.</p>
+      <button class="botao" onclick="contatoServico('Tráfego Pago — Anúncios')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s3')">
@@ -209,21 +222,11 @@ footer{
     </button>
     <section class="detalhe" id="s3">
       <h3>Marketing de Conteúdo — Textos que apresentam seu negócio</h3>
-      <p>
-        Criamos ideias de textos para explicar o valor de um produto,
-        responder dúvidas e ajudar o cliente a conhecer sua empresa.
-      </p>
-      <p><b>Como podemos ajudar?</b> Com descrições, artigos,
-      chamadas promocionais e textos para páginas de venda.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=80"
-        alt="Produto em destaque para conteúdo">
-      <div class="exemplo">
-        <b>Exemplo de texto:</b><br>
-        “Uma fragrância que combina com o seu estilo. Conheça os detalhes,
-        escolha sua favorita e descubra uma nova experiência.”
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Criamos ideias de textos para explicar o valor de um produto, responder dúvidas e ajudar o cliente a conhecer sua empresa.</p>
+      <p><b>Como podemos ajudar?</b> Com descrições, artigos, chamadas promocionais e textos para páginas de venda.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=80" alt="Produto em destaque para conteúdo">
+      <div class="exemplo"><b>Exemplo de texto:</b><br>“Uma fragrância que combina com o seu estilo. Conheça os detalhes, escolha sua favorita e descubra uma nova experiência.”</div>
+      <button class="botao" onclick="contatoServico('Marketing de Conteúdo — Textos')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s4')">
@@ -231,21 +234,11 @@ footer{
     </button>
     <section class="detalhe" id="s4">
       <h3>Redes Sociais — Apresente sua empresa</h3>
-      <p>
-        Preparamos ideias para publicações, legendas, temas e campanhas
-        para Instagram, Facebook e outras redes.
-      </p>
-      <p><b>Como podemos ajudar?</b> Planejando o que publicar,
-      como apresentar os produtos e como convidar o público a entrar em contato.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=80"
-        alt="Produto para exemplo de publicação">
-      <div class="exemplo">
-        <b>Exemplo de publicação:</b><br>
-        “Produto da semana: conheça os detalhes, veja as opções disponíveis
-        e fale conosco para saber mais.”
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Preparamos ideias para publicações, legendas, temas e campanhas para Instagram, Facebook e outras redes.</p>
+      <p><b>Como podemos ajudar?</b> Planejando o que publicar, como apresentar os produtos e como convidar o público a entrar em contato.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=80" alt="Produto para exemplo de publicação">
+      <div class="exemplo"><b>Exemplo de publicação:</b><br>“Produto da semana: conheça os detalhes, veja as opções disponíveis e fale conosco para saber mais.”</div>
+      <button class="botao" onclick="contatoServico('Redes Sociais — Publicações')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s5')">
@@ -253,20 +246,11 @@ footer{
     </button>
     <section class="detalhe" id="s5">
       <h3>E-mail Marketing — Mantenha contato com seus clientes</h3>
-      <p>
-        Planejamos mensagens de novidades, ofertas e informações
-        para pessoas que aceitaram receber comunicações da empresa.
-      </p>
-      <p><b>Como podemos ajudar?</b> Criando assuntos, textos e chamadas
-      para apresentar produtos e novidades.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=80"
-        alt="Produtos de beleza para exemplo de e-mail">
-      <div class="exemplo">
-        <b>Exemplo de assunto:</b><br>
-        “Novidades da semana: veja o que chegou à nossa loja!”
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Planejamos mensagens de novidades, ofertas e informações para pessoas que aceitaram receber comunicações da empresa.</p>
+      <p><b>Como podemos ajudar?</b> Criando assuntos, textos e chamadas para apresentar produtos e novidades.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=80" alt="Produtos de beleza para exemplo de e-mail">
+      <div class="exemplo"><b>Exemplo de assunto:</b><br>“Novidades da semana: veja o que chegou à nossa loja!”</div>
+      <button class="botao" onclick="contatoServico('E-mail Marketing — Mensagens')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s6')">
@@ -274,20 +258,10 @@ footer{
     </button>
     <section class="detalhe" id="s6">
       <h3>Métricas — Entenda os resultados</h3>
-      <p>
-        Acompanhamos indicadores disponíveis nas plataformas para entender
-        como o público reage às ações de divulgação.
-      </p>
-      <p><b>Como podemos ajudar?</b> Organizando dados de visualizações,
-      cliques, contatos e vendas registradas.</p>
-      <div class="exemplo">
-        <b>Exemplo de relatório:</b><br>
-        Publicações realizadas: 8<br>
-        Visualizações: consultar os dados reais<br>
-        Cliques e contatos: consultar os dados reais<br>
-        <small>Os resultados devem ser preenchidos com dados verdadeiros da campanha.</small>
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Acompanhamos indicadores disponíveis nas plataformas para entender como o público reage às ações de divulgação.</p>
+      <p><b>Como podemos ajudar?</b> Organizando dados de visualizações, cliques, contatos e vendas registradas.</p>
+      <div class="exemplo"><b>Exemplo de relatório:</b><br>Publicações realizadas: 8<br>Visualizações: consultar os dados reais<br>Cliques e contatos: consultar os dados reais<br><small>Os resultados devem ser preenchidos com dados verdadeiros da campanha.</small></div>
+      <button class="botao" onclick="contatoServico('Métricas — Resultados')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s7')">
@@ -295,22 +269,11 @@ footer{
     </button>
     <section class="detalhe" id="s7">
       <h3>Fotografia e Divulgação de Produtos</h3>
-      <p>
-        A apresentação visual ajuda o cliente a perceber detalhes,
-        características e utilidades do produto.
-      </p>
-      <p><b>Como podemos ajudar?</b> Planejando fotos, escolhendo imagens
-      adequadas e montando peças promocionais com textos e chamadas.
-      Também podemos orientar sobre como fotografar usando o celular.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=80"
-        alt="Perfume em destaque para divulgação">
-      <div class="exemplo">
-        <b>Exemplo de divulgação:</b><br>
-        Foto do produto, nome, principal característica e uma chamada:
-        “Conheça o produto e peça mais informações.”
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>A apresentação visual ajuda o cliente a perceber detalhes, características e utilidades do produto.</p>
+      <p><b>Como podemos ajudar?</b> Planejando fotos, escolhendo imagens adequadas e montando peças promocionais com textos e chamadas. Também podemos orientar sobre como fotografar usando o celular.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1000&q=80" alt="Perfume em destaque para divulgação">
+      <div class="exemplo"><b>Exemplo de divulgação:</b><br>Foto do produto, nome, principal característica e uma chamada: “Conheça o produto e peça mais informações.”</div>
+      <button class="botao" onclick="contatoServico('Fotografia e Divulgação de Produtos')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s8')">
@@ -318,23 +281,11 @@ footer{
     </button>
     <section class="detalhe" id="s8">
       <h3>Vídeos Publicitários</h3>
-      <p>
-        Vídeos curtos podem apresentar um produto, mostrar como um serviço
-        funciona ou convidar o público a conhecer uma empresa.
-      </p>
-      <p><b>Como podemos ajudar?</b> Criando roteiros, cenas sugeridas,
-      textos na tela e ideias para vídeos de Reels, Shorts e anúncios.
-      A gravação e a edição podem ser combinadas conforme o projeto.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=80"
-        alt="Câmera para produção de vídeo">
-      <div class="exemplo">
-        <b>Exemplo de roteiro de 15 segundos:</b><br>
-        1. Mostrar o produto.<br>
-        2. Destacar um benefício real.<br>
-        3. Encerrar com o nome da empresa e convite para entrar em contato.
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Vídeos curtos podem apresentar um produto, mostrar como um serviço funciona ou convidar o público a conhecer uma empresa.</p>
+      <p><b>Como podemos ajudar?</b> Criando roteiros, cenas sugeridas, textos na tela e ideias para vídeos de Reels, Shorts e anúncios. A gravação e a edição podem ser combinadas conforme o projeto.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=80" alt="Câmera para produção de vídeo">
+      <div class="exemplo"><b>Exemplo de roteiro de 15 segundos:</b><br>1. Mostrar o produto.<br>2. Destacar um benefício real.<br>3. Encerrar com o nome da empresa e convite para entrar em contato.</div>
+      <button class="botao" onclick="contatoServico('Vídeos Publicitários')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s9')">
@@ -342,23 +293,12 @@ footer{
     </button>
     <section class="detalhe" id="s9">
       <h3>Catálogo e Loja Virtual</h3>
-      <p>
-        Organizamos a apresentação dos produtos para que os clientes
-        possam ver fotos, nomes, descrições e informações importantes.
-      </p>
-      <p><b>Como podemos ajudar?</b> Planejando um catálogo digital,
-      organizando páginas de produtos e orientando a estrutura de uma loja virtual.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1000&q=80"
-        alt="Vitrine de loja">
-      <div class="exemplo">
-        <b>Exemplo de catálogo:</b><br>
-        Foto do produto • Nome • Descrição • Preço informado pela empresa
-        • Botão para solicitar informações ou comprar.
-      </div>
-      <p class="aviso">Pagamentos, estoque e pedidos automáticos exigem
-      uma plataforma e configuração específicas.</p>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Organizamos a apresentação dos produtos para que os clientes possam ver fotos, nomes, descrições e informações importantes.</p>
+      <p><b>Como podemos ajudar?</b> Planejando um catálogo digital, organizando páginas de produtos e orientando a estrutura de uma loja virtual.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1000&q=80" alt="Vitrine de loja">
+      <div class="exemplo"><b>Exemplo de catálogo:</b><br>Foto do produto • Nome • Descrição • Preço informado pela empresa • Botão para solicitar informações ou comprar.</div>
+      <p class="aviso">Pagamentos, estoque e pedidos automáticos exigem uma plataforma e configuração específicas.</p>
+      <button class="botao" onclick="contatoServico('Catálogo e Loja Virtual')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s10')">
@@ -366,22 +306,11 @@ footer{
     </button>
     <section class="detalhe" id="s10">
       <h3>Marketing Local</h3>
-      <p>
-        Ajudamos a organizar a presença digital de empresas que atendem
-        clientes em uma cidade ou região específica.
-      </p>
-      <p><b>Como podemos ajudar?</b> Preparando informações da empresa,
-      textos de apresentação, publicações locais e orientações para o
-      Perfil da Empresa no Google.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
-        alt="Loja física para exemplo de marketing local">
-      <div class="exemplo">
-        <b>Exemplo de divulgação:</b><br>
-        “Atendemos em [nome da cidade]. Conheça nossos serviços,
-        consulte os horários e fale conosco.”
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Ajudamos a organizar a presença digital de empresas que atendem clientes em uma cidade ou região específica.</p>
+      <p><b>Como podemos ajudar?</b> Preparando informações da empresa, textos de apresentação, publicações locais e orientações para o Perfil da Empresa no Google.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Loja física para exemplo de marketing local">
+      <div class="exemplo"><b>Exemplo de divulgação:</b><br>“Atendemos em [nome da cidade]. Conheça nossos serviços, consulte os horários e fale conosco.”</div>
+      <button class="botao" onclick="contatoServico('Marketing Local')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s11')">
@@ -389,23 +318,11 @@ footer{
     </button>
     <section class="detalhe" id="s11">
       <h3>Planejamento de Campanhas</h3>
-      <p>
-        Em vez de publicar sem organização, montamos um plano de divulgação
-        com objetivo, público, mensagem e calendário.
-      </p>
-      <p><b>Como podemos ajudar?</b> Definindo etapas para apresentar
-      lançamentos, promoções, datas especiais e serviços da empresa.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80"
-        alt="Planejamento de uma campanha em equipe">
-      <div class="exemplo">
-        <b>Exemplo de campanha de uma semana:</b><br>
-        Segunda: apresentar o produto.<br>
-        Quarta: explicar os benefícios.<br>
-        Sexta: publicar uma oferta aprovada pela empresa.<br>
-        Sábado: acompanhar perguntas e contatos.
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Em vez de publicar sem organização, montamos um plano de divulgação com objetivo, público, mensagem e calendário.</p>
+      <p><b>Como podemos ajudar?</b> Definindo etapas para apresentar lançamentos, promoções, datas especiais e serviços da empresa.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Planejamento de uma campanha em equipe">
+      <div class="exemplo"><b>Exemplo de campanha de uma semana:</b><br>Segunda: apresentar o produto.<br>Quarta: explicar os benefícios.<br>Sexta: publicar uma oferta aprovada pela empresa.<br>Sábado: acompanhar perguntas e contatos.</div>
+      <button class="botao" onclick="contatoServico('Planejamento de Campanhas')">Quero este serviço</button>
     </section>
 
     <button class="servico" onclick="abrir('s12')">
@@ -413,22 +330,11 @@ footer{
     </button>
     <section class="detalhe" id="s12">
       <h3>Identidade Visual e Marca</h3>
-      <p>
-        Uma apresentação visual consistente ajuda as pessoas a reconhecer
-        uma empresa em suas publicações e materiais.
-      </p>
-      <p><b>Como podemos ajudar?</b> Planejando combinações de cores,
-      estilo de imagens, modelos de publicação e formas de apresentar
-      o nome e a mensagem da marca.</p>
-      <img class="foto-produto"
-        src="https://images.unsplash.com/photo-1634942536790-253a9c7c6b2a?auto=format&fit=crop&w=1000&q=80"
-        alt="Materiais de design para identidade visual">
-      <div class="exemplo">
-        <b>Exemplo de identidade visual:</b><br>
-        Nome da empresa, paleta de cores, estilo de letras e um modelo
-        de publicação que mantenha a mesma aparência da marca.
-      </div>
-      <button class="botao" onclick="contato()">Quero divulgar minha empresa com Davi Walker</button>
+      <p>Uma apresentação visual consistente ajuda as pessoas a reconhecer uma empresa em suas publicações e materiais.</p>
+      <p><b>Como podemos ajudar?</b> Planejando combinações de cores, estilo de imagens, modelos de publicação e formas de apresentar o nome e a mensagem da marca.</p>
+      <img class="foto-produto" src="https://images.unsplash.com/photo-1634942536790-253a9c7c6b2a?auto=format&fit=crop&w=1000&q=80" alt="Materiais de design para identidade visual">
+      <div class="exemplo"><b>Exemplo de identidade visual:</b><br>Nome da empresa, paleta de cores, estilo de letras e um modelo de publicação que mantenha a mesma aparência da marca.</div>
+      <button class="botao" onclick="contatoServico('Identidade Visual e Marca')">Quero este serviço</button>
     </section>
 
   </div>
@@ -480,13 +386,16 @@ footer{
       <textarea id="mensagemPronta" readonly placeholder="Sua mensagem aparecerá aqui."></textarea>
     </div>
 
+    <button class="botao botao-whatsapp" type="button" onclick="enviarWhatsApp()">
+      Enviar pelo WhatsApp
+    </button>
     <button class="botao" type="button" onclick="copiarMensagem()">Copiar mensagem</button>
     <button class="botao secundario" type="button" onclick="voltarServicos()">Voltar aos serviços</button>
 
     <p id="status" class="aviso" aria-live="polite"></p>
     <p class="aviso">
-      A mensagem é preparada neste site. Para enviá-la diretamente por WhatsApp
-      ou e-mail, será necessário configurar o contato de destino.
+      O WhatsApp abrirá com a mensagem preenchida. Você ainda precisará
+      tocar em Enviar dentro do WhatsApp.
     </p>
   </section>
 </main>
@@ -496,7 +405,22 @@ footer{
   <p>Ideias, conteúdo e divulgação para sua empresa.</p>
 </footer>
 
+<!-- BOTÃO FIXO DO WHATSAPP -->
+<a
+  class="whatsapp-flutuante"
+  href="https://wa.me/5531971930843?text=Ol%C3%A1%2C%20Davi%20Walker!%20Vim%20pelo%20seu%20site%20de%20Marketing%20Digital."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Conversar com Davi Walker pelo WhatsApp"
+>
+  <span aria-hidden="true">☏</span>
+  Fale pelo WhatsApp
+</a>
+
 <script>
+/* NÚMERO DE WHATSAPP COM CÓDIGO DO BRASIL E DDD */
+const NUMERO_WHATSAPP = '5531971930843';
+
 function fecharDetalhes(){
   document.querySelectorAll('.detalhe').forEach(function(secao){
     secao.classList.remove('aberto');
@@ -517,15 +441,12 @@ function abrir(id){
 }
 
 function contato(){
-  const secao = document.getElementById('contato');
-  const jaEstaAberta = secao.classList.contains('aberto');
+  abrir('contato');
+}
 
-  fecharDetalhes();
-
-  if(!jaEstaAberta){
-    secao.classList.add('aberto');
-    secao.scrollIntoView({behavior:'smooth',block:'start'});
-  }
+function contatoServico(servico){
+  document.getElementById('servicoEscolhido').value = servico;
+  abrir('contato');
 }
 
 function voltarServicos(){
@@ -534,6 +455,12 @@ function voltarServicos(){
     behavior:'smooth',
     block:'start'
   });
+}
+
+function abrirWhatsApp(mensagem){
+  const texto = encodeURIComponent(mensagem);
+  const url = 'https://wa.me/' + NUMERO_WHATSAPP + '?text=' + texto;
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 document.getElementById('formContato').addEventListener('submit',function(event){
@@ -554,12 +481,25 @@ document.getElementById('formContato').addEventListener('submit',function(event)
 
   document.getElementById('mensagemPronta').value = mensagem;
   document.getElementById('status').textContent =
-    'Mensagem preparada. Você pode copiá-la para enviar.';
+    'Mensagem preparada. Agora toque em Enviar pelo WhatsApp ou Copiar mensagem.';
+
   document.getElementById('mensagemPronta').scrollIntoView({
     behavior:'smooth',
     block:'center'
   });
 });
+
+function enviarWhatsApp(){
+  const mensagem = document.getElementById('mensagemPronta').value.trim();
+  const status = document.getElementById('status');
+
+  if(!mensagem){
+    status.textContent = 'Primeiro, preencha o formulário e toque em Preparar mensagem.';
+    return;
+  }
+
+  abrirWhatsApp(mensagem);
+}
 
 async function copiarMensagem(){
   const campo = document.getElementById('mensagemPronta');
